@@ -20,7 +20,7 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 # See https://docs.djangoproject.com/en/5.1/howto/deployment/checklist/
 
 # SECURITY WARNING: keep the secret key used in production secret!
-SECRET_KEY = 'django-insecure-=48=-esf*bkv#f_r6$v4-ep8^svi1y%@ozkkqgc95sdk3plxkk'
+SECRET_KEY = 'django-insecure-2-rzjwvd-xejkz^0tz9n#luuf$654--w%tqz^u5mif!t%2fzb!'
 
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
@@ -122,3 +122,6 @@ STATIC_URL = '/static/'
 # https://docs.djangoproject.com/en/5.1/ref/settings/#default-auto-field
 
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
+
+RAZORPAY_KEY_ID = "rzp_test_84hMOWaeGl3PhD"
+RAZORPAY_KEY_SECRET= "D9BWK7zauXljMgqshM3zNxen"

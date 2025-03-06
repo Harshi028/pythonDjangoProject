@@ -4,7 +4,8 @@ from django.http import HttpResponse
 from delivery.models import Customer, Restaurants, Menu, Cart
 from delivery.forms import ResForm, MenuForm
 from django.conf import settings
-import razorpay # type: ignore
+
+from mealmate.settings import RAZORPAY_KEY_ID
 # Create your views here.
 def index(request):
     return render(request,'delivery/index.html')
@@ -97,7 +98,7 @@ def show_cart(request, username):
 
 def add_to_cart(request,username,menuid):
     customer = Customer.objects.get(username = username)
-    item = Menu.objects.get(pk=menuid)
+    item = Menu.objects.get(pk=menuid) 
     cart, created = Cart.objects.get_or_create(customer = customer)
     cart.items.add(item)
     messages.success(request,f"{item.item_name} added")
@@ -112,7 +113,10 @@ def checkout(request, username):
     if total_price == 0:
         return render(request, 'delivery/checkout.html',{'error':'Your cart is Empty'})
 
+    import razorpay  # type: ignore # Ensure this is at the top of your file
+
     client = razorpay.Client(auth=(settings.RAZORPAY_KEY_ID, settings.RAZORPAY_KEY_SECRET))
+
 
     order_data = {
         'amount':int(total_price * 100),
