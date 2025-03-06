@@ -1,7 +1,61 @@
-{% extends "delivery/base.html" %} {% block content %}
-<h1>Login success</h1>
+{% extends "delivery/base.html" %} 
 
-<a href="{% url 'delivery:add_res' %}">Add Restaurants </a>
-<a href="{% url 'delivery:display_res' %}">Show all Restaurants </a>
+{% block content %}
+<div style="
+    max-width: 500px;
+    margin: 50px auto;
+    padding: 20px;
+    text-align: center;
+    border: 1px solid #ccc;
+    border-radius: 8px;
+    background-color: #f9f9f9;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    font-family: Arial, sans-serif;
+  ">
+  
+  <h1 style="
+      color: #28a745;
+      font-size: 24px;
+      font-weight: bold;
+    ">
+    Login Success 🎉
+  </h1>
 
+  <div style="margin-top: 20px;">
+    <a href="{% url 'delivery:add_res' %}" style="
+        display: inline-block;
+        padding: 10px 15px;
+        margin: 5px;
+        background-color: #007bff;
+        color: white;
+        text-decoration: none;
+        border-radius: 5px;
+        font-size: 16px;
+        font-weight: bold;
+        transition: background 0.3s;
+      "
+      onmouseover="this.style.backgroundColor='#0056b3'"
+      onmouseout="this.style.backgroundColor='#007bff'">
+      ➕ Add Restaurant
+    </a>
+
+    <a href="{% url 'delivery:display_res' %}" style="
+        display: inline-block;
+        padding: 10px 15px;
+        margin: 5px;
+        background-color: #28a745;
+        color: white;
+        text-decoration: none;
+        border-radius: 5px;
+        font-size: 16px;
+        font-weight: bold;
+        transition: background 0.3s;
+      "
+      onmouseover="this.style.backgroundColor='#1e7e34'"
+      onmouseout="this.style.backgroundColor='#28a745'">
+      📌 Show All Restaurants
+    </a>
+  </div>
+
+</div>
 {% endblock %}

@@ -1,26 +1,37 @@
-<table>
-    <tr>
-      <th>Username:</th>
-      <th>{{username}}</th>
-    </tr>
+<table style="
+    width: 50%;
+    margin: 50px auto;
+    border-collapse: collapse;
+    font-family: Arial, sans-serif;
+    font-size: 18px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    background-color: #f9f9f9;
+    text-align: left;
+  ">
   
-    <tr>
-      <th>Password:</th>
-      <th>{{password}}</th>
-    </tr>
-  
-    <tr>
-      <th>Email:</th>
-      <th>{{email}}</th>
-    </tr>
-  
-    <tr>
-      <th>Mobile:</th>
-      <th>{{mobile}}</th>
-    </tr>
-  
-    <tr>
-      <th>Address:</th>
-      <th>{{address}}</th>
-    </tr>
-  </table>
+  <tr style="background-color: #007bff; color: white;">
+    <th style="padding: 10px; border: 1px solid #ddd;">Username:</th>
+    <th style="padding: 10px; border: 1px solid #ddd;">{{ username }}</th>
+  </tr>
+
+  <tr>
+    <th style="padding: 10px; border: 1px solid #ddd;">Password:</th>
+    <th style="padding: 10px; border: 1px solid #ddd;">{{ password }}</th>
+  </tr>
+
+  <tr style="background-color: #e9ecef;">
+    <th style="padding: 10px; border: 1px solid #ddd;">Email:</th>
+    <th style="padding: 10px; border: 1px solid #ddd;">{{ email }}</th>
+  </tr>
+
+  <tr>
+    <th style="padding: 10px; border: 1px solid #ddd;">Mobile:</th>
+    <th style="padding: 10px; border: 1px solid #ddd;">{{ mobile }}</th>
+  </tr>
+
+  <tr style="background-color: #e9ecef;">
+    <th style="padding: 10px; border: 1px solid #ddd;">Address:</th>
+    <th style="padding: 10px; border: 1px solid #ddd;">{{ address }}</th>
+  </tr>
+
+</table>
