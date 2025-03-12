@@ -6,46 +6,32 @@
     <title>Checkout</title>
     <script src="https://checkout.razorpay.com/v1/checkout.js"></script>
   </head>
-  <body style="font-family: Arial, sans-serif; text-align: center; padding: 20px;">
-    <h1 style="color: #333;">Checkout</h1>
-    <h2 style="color: #555;">Welcome, {{ username }}</h2>
+  <body>
+    <h1>Checkout</h1>
+    <h2>Welcome, {{ username }}</h2>
 
     {% if error %}
-    <p style="color: red; font-weight: bold;">{{ error }}</p>
+    <p style="color: red">{{ error }}</p>
     {% else %}
-    <table border="1" style="
-        width: 50%;
-        margin: 20px auto;
-        border-collapse: collapse;
-      ">
+    <table border="1">
       <thead>
-        <tr style="background-color: #f8f8f8;">
-          <th style="padding: 10px; border: 1px solid #ddd;">Item</th>
-          <th style="padding: 10px; border: 1px solid #ddd;">Price</th>
+        <tr>
+          <th>Item</th>
+          <th>Price</th>
         </tr>
       </thead>
       <tbody>
         {% for item in cart_items %}
         <tr>
-          <td style="padding: 10px; border: 1px solid #ddd;">{{ item.item_name }}</td>
-          <td style="padding: 10px; border: 1px solid #ddd;">₹{{ item.price }}</td>
+          <td>{{ item.item_name }}</td>
+          <td>₹{{ item.price }}</td>
         </tr>
         {% endfor %}
       </tbody>
     </table>
-    <h3 style="color: #333;">Total: ₹{{ total_price }}</h3>
+    <h3>Total: ₹{{ total_price }}</h3>
 
-    <button id="rzp-button" style="
-        background-color: #528FF0;
-        color: white;
-        border: none;
-        padding: 10px 20px;
-        font-size: 16px;
-        cursor: pointer;
-        border-radius: 5px;
-      ">
-      Pay with Razorpay
-    </button>
+    <button id="rzp-button">Pay with Razorpay</button>
     {% endif %}
 
     <script>

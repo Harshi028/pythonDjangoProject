@@ -1,41 +1,23 @@
 {% extends "delivery/base.html" %} {% block content %}
-<div style="margin-top: 50px; display: flex; justify-content: center;">
-  <form method="POST" style="
-      background-color: #f8f9fa;
-      padding: 20px;
-      border-radius: 10px;
-      box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
-      width: 300px;
-      display: flex;
-      flex-direction: column;
-      gap: 10px;
-    ">
-    {% csrf_token %}
+<div style="margin-top: 50px"></div>
+<form method="POST">
+  {% csrf_token %}
 
-    <label style="font-weight: bold;">Restaurant Name:</label>
-    {{ form.Res_name }}
+  <label>Restaurant Name:</label>
+  {{ form.Res_name }}
 
-    <label style="font-weight: bold;">Food Category:</label>
-    {{ form.Food_cat }}
+  <label>Food Category:</label>
+  {{ form.Food_cat }}
 
-    <label style="font-weight: bold;">Rating:</label>
-    {{ form.rating }}
+  <label>Rating:</label>
+  {{ form.rating }}
 
-    <label style="font-weight: bold;">Image:</label>
-    {{ form.img }}
+  <label>Image:</label>
+  {{ form.img }}
 
-    <label style="font-weight: bold;">Address:</label>
-    {{ form.address }}
+  <label>Address:</label>
+  {{ form.address }}
 
-    <button type="submit" style="
-        margin-top: 10px;
-        background-color: #007bff;
-        color: white;
-        border: none;
-        padding: 10px;
-        border-radius: 5px;
-        cursor: pointer;
-      ">Submit</button>
-  </form>
-</div>
+  <button type="submit">Submit</button>
+</form>
 {% endblock %}
